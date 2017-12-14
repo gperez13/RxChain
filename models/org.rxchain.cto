@@ -1,0 +1,94 @@
+namespace org.rxchain
+
+
+asset Recipe identified by contractId{
+  o String contractId
+  --> Patient patient
+  --> Physician physician
+  o DateTime prescriptionDate
+  o Double tablets
+  o Double dosage
+  o ProductType type
+  o ShipmentStatus status
+  o String notes
+}
+
+
+asset Shipment identified by shipmentId{
+  o String shipmentId
+  o String unitCount
+  --> Recipe recipe
+}
+
+
+enum ProductType{
+  o IBOPROUFEN
+  o ASPIRIN
+  o XANAX
+  o VIAGRA
+
+}
+
+enum ShipmentStatus{
+  o PRESCRIBED
+  o IN_TRANSIT
+  o FILLED
+}
+
+
+concept Address {
+  o String city optional
+  o String country
+  o String street optional
+  o String zip optional
+}
+
+participant Patient identified by PMI{
+  o String PMI
+  o Double accountBalance
+  o Address address
+
+}
+
+
+participant Physician identified by NPI{
+  o String NPI
+  o String name
+  o Double accountBalance
+}
+
+
+
+participant Vendor identified by email{
+  o String email
+  o Double accountBalance
+}
+
+
+
+transaction OurSetupDemo {
+
+
+}
+
+abstract transaction ShipmentTransaction {
+  -->Shipment shipment
+}
+
+
+transaction ShipmentReceived extends ShipmentTransaction{
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

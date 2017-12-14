@@ -1,0 +1,26 @@
+{
+  "engines": {
+    "composer": "^0.15.0"
+  },
+  "name": "rxchain",
+  "version": "0.0.1",
+  "description": "Prescription ledger",
+  "scripts": {
+    "test": "mocha -t 0 --recursive"
+  },
+  "author": "Giovanni Perez",
+  "email": "Gio@gio.com",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "composer-admin": "latest",
+    "composer-client": "latest",
+    "composer-common": "latest",
+    "composer-connector-embedded": "latest",
+    "chai": "latest",
+    "eslint": "latest",
+    "istanbul": "latest",
+    "mkdirp": "latest",
+    "mocha": "latest",
+    "sinon": "latest"
+  }
+}
